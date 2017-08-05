@@ -1,0 +1,41 @@
+{
+  "name": "avoido",
+  "version": "0.1.0",
+  "description": "Avoid the enemies by moving cell",
+  "main": "src/app.js",
+  "private": true,
+  "scripts": {
+    "build": "babel src -d lib",
+    "lint": "eslint src",
+    "lint-fix": "eslint src -fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D01T/Avoido.git"
+  },
+  "keywords": [
+    "online",
+    "web-game"
+  ],
+  "contributors": [
+    {
+      "name": "Astro36",
+      "email": "astr36@naver.com",
+      "url": "http://astro36.me"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/D01T/Avoido/issues"
+  },
+  "homepage": "https://github.com/D01T/Avoido#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
