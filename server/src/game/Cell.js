@@ -15,7 +15,7 @@ export default class Cell extends Entity {
     if (entity instanceof Entity && distance > 0) {
       const entityVector = entity.getVector();
       const myVector = this.getVector();
-      const vectorDistance = myVector.distnace(entityVector);
+      const vectorDistance = myVector.distance(entityVector);
       if (vectorDistance <= distance) {
         this.setVector(entityVector);
       } else {
