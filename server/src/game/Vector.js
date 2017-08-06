@@ -19,7 +19,7 @@ export default class Vector {
   }
 
   add(vector) {
-    if (vector.ctor instanceof Vector) {
+    if (vector instanceof Vector) {
       this.x += vector.x;
       this.y += vector.y;
     }
