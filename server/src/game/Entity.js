@@ -1,10 +1,15 @@
+import Utils from './Utils';
 import Stage from './Stage';
 import Vector from './Vector';
 
 export default class Entity {
   constructor(vector = new Vector()) {
-    this.name = '';
+    this.name = `Entity:${Utils.getHash(new Date().toString())}`;
     this.vector = vector;
+  }
+
+  getName() {
+    return this.name;
   }
 
   getStage() {
@@ -19,6 +24,10 @@ export default class Entity {
     if (this.stage instanceof Stage) {
       this.stage.render(this.tag, key, values);
     }
+  }
+
+  setName(name) {
+    this.name = this.name.replace(/^[A-z0-9]+/, name);
   }
 
   setStage(stage) {

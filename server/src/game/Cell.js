@@ -3,6 +3,7 @@ import Entity from './Entity';
 export default class Cell extends Entity {
   constructor(vector, color = '#fff') {
     super(vector);
+    this.setName('Cell');
     this.color = color;
   }
 
