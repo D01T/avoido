@@ -1,22 +1,36 @@
+import Stage from './Stage';
+import Vector from './Vector';
+
 export default class Entity {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
+  constructor(vector = new Vector()) {
+    this.name = '';
+    this.vector = vector;
   }
 
-  getX() {
-    return this.x;
+  getStage() {
+    return this.stage;
   }
 
-  getY() {
-    return this.y;
+  getVector() {
+    return this.vector;
   }
 
-  setX(x) {
-    this.x = x;
+  notifyStage(key, ...values) {
+    if (this.stage instanceof Stage) {
+      this.stage.render(this.tag, key, values);
+    }
   }
 
-  setY(y) {
-    this.y = y;
+  setStage(stage) {
+    this.stage = stage;
+  }
+
+  setVector(vector) {
+    this.vector = vector;
+    this.notifyStage('vector', vector);
+  }
+
+  updateVector() {
+    this.notifyStage('vector', this.vector);
   }
 }
