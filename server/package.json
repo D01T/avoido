@@ -38,19 +38,19 @@
     "url": "https://github.com/D01T/Avoido/issues"
   },
   "homepage": "https://github.com/D01T/Avoido#readme",
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.3",
-    "babel-plugin-array-includes": "^2.0.3",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "eslint": "^4.3.0",
-    "eslint-config-airbnb-base": "^11.3.1",
-    "eslint-plugin-import": "^2.7.0"
-  },
   "dependencies": {
     "koa": "^2.3.0",
     "koa-pug": "^3.0.0-2",
     "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-preset-node8": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0"
   }
 }
