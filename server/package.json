@@ -2,7 +2,7 @@
   "name": "avoido",
   "version": "0.1.0",
   "description": "Avoid the enemies by moving cell",
-  "main": "src/app.js",
+  "main": "src/main.js",
   "private": true,
   "scripts": {
     "build": "babel src -d lib",
@@ -40,7 +40,7 @@
   "homepage": "https://github.com/D01T/Avoido#readme",
   "dependencies": {
     "koa": "^2.3.0",
-    "koa-pug": "^3.0.0-2",
+    "pug": "^2.0.0-rc.3",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
