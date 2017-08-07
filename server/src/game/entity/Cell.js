@@ -20,7 +20,7 @@ export default class Cell extends Entity {
         this.setVector(entityVector);
       } else {
         myVector.add(entityVector.subtract(myVector).multiply(vectorDistance / distance));
-        this.updateVector();
+        this.notifyStage('vector', myVector);
       }
     }
   }

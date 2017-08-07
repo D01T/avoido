@@ -1,4 +1,4 @@
-import Item from './Item';
+import Item from '../data/ItemInfo';
 
 export default class Inventory {
   constructor(items = []) {

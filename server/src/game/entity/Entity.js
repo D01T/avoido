@@ -1,6 +1,6 @@
-import Utils from './Utils';
-import Stage from './Stage';
-import Vector from './Vector';
+import Stage from '../stage/Stage';
+import Utils from '../utils/Utils';
+import Vector from '../utils/Vector';
 
 export default class Entity {
   constructor(vector = new Vector()) {
@@ -22,7 +22,7 @@ export default class Entity {
 
   notifyStage(key, ...values) {
     if (this.stage instanceof Stage) {
-      this.stage.render(this.tag, key, values);
+      this.stage.update(this.tag, key, values);
     }
   }
 
@@ -37,9 +37,5 @@ export default class Entity {
   setVector(vector) {
     this.vector = vector;
     this.notifyStage('vector', vector);
-  }
-
-  updateVector() {
-    this.notifyStage('vector', this.vector);
   }
 }

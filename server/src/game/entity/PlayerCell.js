@@ -1,5 +1,5 @@
 import Cell from './Cell';
-import Vector from './Vector';
+import Vector from '../utils/Vector';
 
 export default class PlayerCell extends Cell {
   constructor(vector, color) {

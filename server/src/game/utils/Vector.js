@@ -4,6 +4,10 @@ export default class Vector {
     this.y = y;
   }
 
+  static arrayTo([x, y]) {
+    return new Vector(x, y);
+  }
+
   clone() {
     return new Vector(this.x, this.y);
   }
