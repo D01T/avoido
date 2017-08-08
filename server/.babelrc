@@ -1,4 +1,10 @@
 {
-  "presets": ["node8"],
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": "current"
+      }
+    }],
+    "stage-2"],
   "plugins": ["array-includes"]
 }

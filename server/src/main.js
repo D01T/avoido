@@ -1,17 +1,17 @@
-import Koa from 'koa'
-import Path from 'path'
-import Pug from 'koa-pug'
+import Koa from 'koa';
+import Path from 'path';
+import Pug from 'koa-pug';
 
-const root = Path.join(__dirname, '../../')
+const root = Path.join(__dirname, '../../');
 
-const app = new Koa()
+const app = new Koa();
 const pug = new Pug({
-  viewPath: root + '/client/view/',
-  app: app
-})
+  viewPath: Path.join(root, '/client/view/'),
+  app,
+});
 
-app.use(async ctx => {
-  ctx.body = pug.render('index')
-})
+app.use(async (ctx) => {
+  ctx.body = pug.render('index');
+});
 
-app.listen(4000)
+app.listen(4000);

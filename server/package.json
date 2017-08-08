@@ -5,7 +5,7 @@
   "main": "src/main.js",
   "private": true,
   "scripts": {
-    "start": "babel src -d lib & node ./lib/main.js",
+    "start": "babel src -d lib & node lib/main.js",
     "build": "babel src -d lib",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix"
@@ -42,14 +42,13 @@
   "dependencies": {
     "koa": "^2.3.0",
     "koa-pug": "^3.0.0-2",
-    "pug": "^2.0.0-rc.3",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-eslint": "^7.2.3",
     "babel-plugin-array-includes": "^2.0.3",
-    "babel-preset-node8": "^1.1.2",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.3.0",
     "eslint-config-airbnb-base": "^11.3.1",
