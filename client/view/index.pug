@@ -1,14 +1,25 @@
 doctype html
 html(lang="ko")
   head
-    title
-      | Avoido
     link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway")
-    link(rel="stylesheet" href="../public/css/main.css")
-  body
+    style
+      include ../public/css/main.css
+    title Avoido
+  body(onclick="start()")
     header
-      #title
-        | Avoido
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js")
-    script(src="../public/js/main.js")
+      #title Avoido
+    section
+      #guide
+        | Click to Start
+    footer
+      #copyright
+        i.material-icons(style="font-size: 12px;")
+          | copyright
+        |  Copyright 2017. 
+        a(href='http://github.com/D01T')
+          | DoIT
+        |  all rights reserved.
+    script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js")
+    script
+      include ../public/js/main.js

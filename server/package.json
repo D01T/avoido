@@ -5,6 +5,7 @@
   "main": "src/main.js",
   "private": true,
   "scripts": {
+    "start": "babel src -d lib & node ./lib/main.js",
     "build": "babel src -d lib",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix"
@@ -40,6 +41,7 @@
   "homepage": "https://github.com/D01T/Avoido#readme",
   "dependencies": {
     "koa": "^2.3.0",
+    "koa-pug": "^3.0.0-2",
     "pug": "^2.0.0-rc.3",
     "socket.io": "^2.0.3"
   },

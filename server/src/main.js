@@ -1,10 +1,17 @@
-const koa = require('koa');
-const pug = require('pug');
+import Koa from 'koa'
+import Path from 'path'
+import Pug from 'koa-pug'
 
-const app = new koa();
+const root = Path.join(__dirname, '../../')
 
-app.use(async (ctx) => {
-  ctx.body = pug.renderFile('../../client/view/index.pug');
-});
+const app = new Koa()
+const pug = new Pug({
+  viewPath: root + '/client/view/',
+  app: app
+})
 
-app.listen(4000);
+app.use(async ctx => {
+  ctx.body = pug.render('index')
+})
+
+app.listen(4000)

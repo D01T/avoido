@@ -1,9 +1,52 @@
 body {
   margin: 0px;
   padding: 0px;
+
+  width: 100vw;
+  height: 100vh;
+
+  font-family: 'Raleway';
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
+}
+
+a:active {
+  color: black;
+}
+
+header {
+  width: 100vw;
+  height: 30vh;
+
+  text-align: center;
+  line-height: 30vh;
+}
+
+footer {
+  width: 100vw;
+  height: 10vh;
+
+  text-align: center;
+
+  position: absolute;
+  bottom: 0px;
 }
 
 #title {
-  size: 48px;
+  font-size: 48px;
   font-family: 'Raleway';
+}
+
+
+#copyright {
+  font-size: 12px;
+  line-height: 12px;
+  vertical-align: middle;
 }
