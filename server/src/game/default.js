@@ -1,7 +1,9 @@
 import http from 'http';
 import socketio from 'socket.io';
 import fs from 'fs';
+import ItemInfo from './data/ItemInfo';
 import Stage from './stage/Stage';
+import Inventory from './system/Inventory';
 import CellController from './controller/CellController';
 import ItemController from './controller/ItemController';
 import PlayerCellController from './controller/PlayerCellController';
@@ -25,6 +27,7 @@ export default class Game {
         }
       }
     });
+    this.inventory = new Inventory();
     this.isConnected = false;
   }
 
@@ -52,6 +55,13 @@ export default class Game {
     this.socket.emit('run', {
       width: this.stage.getWidth(),
       height: this.stage.getHeight(),
+    });
+    this.socket.on('use-item', (data) => {
+      /* data를 ItemInfo로 바꿔야됨
+      if (this.inventory.hasItem(itemInfo)) {
+        아이템 사용
+        this.inventory.removeItem(itemInfo);
+      } */
     });
     this.socket.on('vector-player', this.stage.playerMove);
     this.isConnected = true;

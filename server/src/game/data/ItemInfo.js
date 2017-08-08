@@ -1,29 +1,15 @@
 import Item from '../data/ItemInfo';
 
-export default class Inventory {
-  constructor(items = []) {
-    this.items = items;
+export default class ItemInfo {
+  constructor(name) {
+    this.name = name;
   }
 
-  addItem(item) {
-    if (item instanceof Item) {
-      this.items.push(item);
-    }
+  getName() {
+    return this.name;
   }
 
-  hasItem(item) {
-    if (item instanceof Item) {
-      return this.items.includes(item);
-    }
-    return false;
-  }
-
-  removeItem(item) {
-    if (item instanceof Item) {
-      const index = this.items.indexOf(item);
-      if (index >= 0) {
-        this.items.splice(index, 1);
-      }
-    }
+  setName(name) {
+    this.name = name;
   }
 }

@@ -7,18 +7,19 @@ export default class Inventory {
 
   addItem(itemInfo) {
     if (itemInfo instanceof ItemInfo) {
-      const count = this.items[itemInfo];
+      const name = itemInfo.getName();
+      const count = this.items[name];
       if (typeof count === 'number') {
-        this.items[itemInfo] += 1;
+        this.items[name] += 1;
       } else {
-        this.items[itemInfo] = 0;
+        this.items[name] = 1;
       }
     }
   }
 
   hasItem(itemInfo) {
     if (itemInfo instanceof ItemInfo) {
-      const count = this.items[itemInfo];
+      const count = this.items[itemInfo.getName()];
       return typeof count === 'number' && count >= 1;
     }
     return false;
@@ -26,9 +27,10 @@ export default class Inventory {
 
   removeItem(itemInfo) {
     if (itemInfo instanceof ItemInfo) {
-      const count = this.items[itemInfo];
+      const name = itemInfo.getName();
+      const count = this.items[name];
       if (typeof count === 'number' && count >= 1) {
-        this.items[itemInfo] -= 1;
+        this.items[name] -= 1;
       }
     }
   }
