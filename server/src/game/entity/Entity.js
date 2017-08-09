@@ -1,8 +1,8 @@
-import Stage from '../stage/Stage';
-import Utils from '../utils/Utils';
-import Vector from '../utils/Vector';
+const Stage = require('../stage/Stage');
+const Utils = require('../utils/Utils');
+const Vector = require('../utils/Vector');
 
-export default class Entity {
+class Entity {
   constructor(vector = new Vector()) {
     this.name = `Entity:${Utils.getHash(new Date().toString())}`;
     this.vector = vector;
@@ -39,3 +39,5 @@ export default class Entity {
     this.notifyStage('vector', vector);
   }
 }
+
+module.exports = Entity;

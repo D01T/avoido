@@ -1,15 +1,15 @@
-import http from 'http';
-import socketio from 'socket.io';
-import fs from 'fs';
-import ItemInfo from './data/ItemInfo';
-import Stage from './stage/Stage';
-import Inventory from './system/Inventory';
-import CellController from './controller/CellController';
-import ItemController from './controller/ItemController';
-import PlayerCellController from './controller/PlayerCellController';
-import { frame } from '../config.json';
+const http = require('http');
+const socketio = require('socket.io');
+const fs = require('fs');
+const ItemInfo = require('./data/ItemInfo');
+const Stage = require('./stage/Stage');
+const Inventory = require('./system/Inventory');
+const CellController = require('./controller/CellController');
+const ItemController = require('./controller/ItemController');
+const PlayerCellController = require('./controller/PlayerCellController');
+const { frame } = require('../config.json');
 
-export default class Game {
+class Game {
   constructor() {
     this.stage = new Stage();
     this.stage.setCellController(new CellController());
@@ -43,10 +43,9 @@ export default class Game {
         }
       });
     });
-    const io = socketio(app);
+    this.socket = socketio(app);
     app.listen(5000);
-    io.on('connection', (socket) => {
-      this.socket = socket;
+    this.socket.on('connection', (socket) => {
       socket.emit('news', { hello: 'world' });
       socket.on('my other event', (data) => {
         console.log(data);
@@ -74,3 +73,5 @@ export default class Game {
     clearInterval(this.loop);
   }
 }
+
+module.exports = Game;

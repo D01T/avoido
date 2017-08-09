@@ -1,6 +1,4 @@
-import Item from '../data/ItemInfo';
-
-export default class ItemInfo {
+class ItemInfo {
   constructor(name) {
     this.name = name;
   }
@@ -13,3 +11,5 @@ export default class ItemInfo {
     this.name = name;
   }
 }
+
+module.exports = ItemInfo;

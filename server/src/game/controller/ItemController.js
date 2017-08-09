@@ -1,7 +1,7 @@
-import EntityController from './EntityController';
-import { frame } from '../../config.json';
+const EntityController = require('./EntityController');
+const { frame } = require('../../config.json');
 
-export default class ItemController extends EntityController {
+class ItemController extends EntityController {
   update() {
     Object.entries(this.elements).forEach((element) => {
       const [, item] = element;
@@ -12,3 +12,5 @@ export default class ItemController extends EntityController {
     });
   }
 }
+
+module.exports = ItemController;

@@ -1,8 +1,8 @@
-import CellController from '../controller/CellController';
-import ItemController from '../controller/ItemController';
-import PlayerCellController from '../controller/PlayerCellController';
+const CellController = require('../controller/CellController');
+const ItemController = require('../controller/ItemController');
+const PlayerCellController = require('../controller/PlayerCellController');
 
-export default class Stage {
+class Stage {
   constructor(width = 512, height = 512) {
     this.width = width;
     this.height = height;
@@ -77,3 +77,5 @@ export default class Stage {
     }
   }
 }
+
+module.exports = Stage;

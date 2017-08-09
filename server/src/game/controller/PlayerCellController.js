@@ -1,7 +1,7 @@
-import EntityController from './EntityController';
-import Vector from '../utils/Vector';
+const EntityController = require('./EntityController');
+const Vector = require('../utils/Vector');
 
-export default class PlayerCellController extends EntityController {
+class PlayerCellController extends EntityController {
   update(data) {
     Object.entries(data).forEach((element) => {
       const [name, vectorArray] = element;
@@ -9,3 +9,5 @@ export default class PlayerCellController extends EntityController {
     });
   }
 }
+
+module.exports = PlayerCellController;

@@ -1,6 +1,6 @@
-import Entity from './Entity';
+const Entity = require('./Entity');
 
-export default class Item extends Entity {
+class Item extends Entity {
   constructor(vector, itemInfo) {
     super(vector);
     this.setName('Item');
@@ -8,3 +8,5 @@ export default class Item extends Entity {
     this.itemInfo = itemInfo;
   }
 }
+
+module.exports = Item;

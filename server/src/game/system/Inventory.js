@@ -1,6 +1,6 @@
-import ItemInfo from '../data/ItemInfo';
+const ItemInfo = require('../data/ItemInfo');
 
-export default class Inventory {
+class Inventory {
   constructor(items = {}) {
     this.items = items;
   }
@@ -35,3 +35,5 @@ export default class Inventory {
     }
   }
 }
+
+module.exports = Inventory;

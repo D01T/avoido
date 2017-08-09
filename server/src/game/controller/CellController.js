@@ -1,6 +1,6 @@
-import EntityController from './EntityController';
+const EntityController = require('./EntityController');
 
-export default class CellController extends EntityController {
+class CellController extends EntityController {
   update() {
     Object.entries(this.elements).forEach((element) => {
       // const [name, cell] = element;
@@ -8,3 +8,5 @@ export default class CellController extends EntityController {
     });
   }
 }
+
+module.exports = CellController;

@@ -1,7 +1,7 @@
-import Cell from './Cell';
-import Vector from '../utils/Vector';
+const Cell = require('./Cell');
+const Vector = require('../utils/Vector');
 
-export default class PlayerCell extends Cell {
+class PlayerCell extends Cell {
   constructor(vector, color) {
     super(vector, color);
     this.setName('PlayerCell');
@@ -13,3 +13,5 @@ export default class PlayerCell extends Cell {
     }
   }
 }
+
+module.exports = PlayerCell;

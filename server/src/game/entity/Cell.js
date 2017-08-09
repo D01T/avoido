@@ -1,6 +1,6 @@
-import Entity from './Entity';
+const Entity = require('./Entity');
 
-export default class Cell extends Entity {
+class Cell extends Entity {
   constructor(vector, color = '#fff') {
     super(vector);
     this.setName('Cell');
@@ -29,3 +29,5 @@ export default class Cell extends Entity {
     this.color = color;
   }
 }
+
+module.exports = Cell;

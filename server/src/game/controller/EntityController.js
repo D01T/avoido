@@ -1,4 +1,4 @@
-export default class EntityController {
+class EntityController {
   constructor(stage) {
     this.elements = {};
     this.stage = stage;
@@ -24,3 +24,5 @@ export default class EntityController {
     throw new Error('must be implemented by subclass!');
   }
 }
+
+module.exports = EntityController;
