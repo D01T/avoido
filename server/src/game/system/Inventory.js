@@ -41,8 +41,8 @@ class Inventory {
       if (typeof count === 'number') {
         return count;
       }
-      return 0;
     }
+    return 0;
   }
 }
 
