@@ -34,6 +34,16 @@ class Inventory {
       }
     }
   }
+
+  getItemCount(itemInfo) {
+    if (itemInfo instanceof ItemInfo) {
+      const count = this.items[itemInfo.getName()];
+      if (typeof count === 'number') {
+        return count;
+      }
+      return 0;
+    }
+  }
 }
 
 module.exports = Inventory;
