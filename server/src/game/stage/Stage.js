@@ -7,7 +7,7 @@ class Stage {
     this.width = width;
     this.height = height;
     this.ticktock = () => {
-      if (this.cellController instanceof ItemController) {
+      if (this.cellController instanceof CellController) {
         this.cellController.update();
       }
       if (this.itemController instanceof ItemController) {
