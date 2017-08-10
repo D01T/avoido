@@ -63,7 +63,7 @@ class Stage {
     }
   }
 
-  setUpadater(func) {
+  setUpdater(func) {
     this.updater = func;
   }
 
