@@ -17,12 +17,17 @@ class EntityController {
     return null;
   }
 
+  getAll() {
+    return Object.values(this.elements);
+  }
+
   has(element) {
     return element.getName() in this.elements;
   }
 
   remove(element) {
     if (this.has(element)) {
+      this.elements[element.getName()].remove();
       delete this.elements[element.getName()];
     }
   }

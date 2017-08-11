@@ -31,6 +31,15 @@ class Game {
               vector: [values[0].x, values[0].y],
             });
             break;
+          case 'remove':
+            // remove: object
+            // {
+            //   entityName: string
+            // }
+            this.connection.send('remove', {
+              entityName
+            });
+            break;
         }
       }
     });

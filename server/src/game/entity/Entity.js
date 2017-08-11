@@ -26,6 +26,10 @@ class Entity {
     }
   }
 
+  remove() {
+    this.notifyStage('remove');
+  }
+
   setName(name) {
     this.name = this.name.replace(/^[A-z0-9]+/, name);
   }
