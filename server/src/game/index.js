@@ -1,12 +1,14 @@
 const http = require('http');
 const socketio = require('socket.io');
 const fs = require('fs');
+const path = require('path');
 const ItemInfo = require('./data/ItemInfo');
 const Stage = require('./stage/Stage');
 const Inventory = require('./system/Inventory');
 const CellController = require('./controller/CellController');
 const ItemController = require('./controller/ItemController');
 const PlayerCellController = require('./controller/PlayerCellController');
+const Utils = require('./utils/Utils');
 const { frame } = require('../config.json');
 
 class Game {
@@ -19,6 +21,11 @@ class Game {
       if (this.isConnected) {
         switch (key) {
           case 'vector':
+            // vector: object
+            // {
+            //   entityName: string,
+            //   vector: [x, y]
+            // }
             this.connection.send('vector', {
               entityName,
               vector: [values[0].x, values[0].y],
@@ -51,17 +58,36 @@ class Game {
         console.log(data);
       });
     });
+    // run: object
+    // {
+    //   width: number,
+    //   height: number
+    // }
     this.socket.emit('run', {
       width: this.stage.getWidth(),
       height: this.stage.getHeight(),
     });
+    // use-item -> data: object
+    // {
+    //   itemName: string,
+    //   playerName: string
+    // }
     this.socket.on('use-item', (data) => {
-      /* data를 ItemInfo로 바꿔야됨
-      if (this.inventory.hasItem(itemInfo)) {
-        아이템 사용
-        this.inventory.removeItem(itemInfo);
-      } */
+      const itemClassPath = path.join('data', 'ItemInfo-${Utils.toPascalCase(data.itemName)}.js');
+      if (fs.existsSync(itemClassPath)) {
+        const itemInfo = require(itemClassPath);
+        if (this.inventory.hasItem(itemInfo)) {
+          itemInfo.use(this.stage, playerName);
+          this.inventory.removeItem(itemInfo);
+        }
+      }
     });
+    // vector-player -> data: object
+    // {
+    //   player1Name: [x, y],
+    //   player2Name: [x, y],
+    //   ...
+    // }
     this.socket.on('vector-player', this.stage.playerMove);
     this.isConnected = true;
     this.loop = setInterval(this.stage.ticktock, Math.floor(1000 / frame));

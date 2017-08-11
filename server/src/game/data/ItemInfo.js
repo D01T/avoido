@@ -1,6 +1,7 @@
 class ItemInfo {
-  constructor(name) {
+  constructor(name, func) {
     this.name = name;
+    this.func = func;
   }
 
   getName() {
@@ -9,6 +10,13 @@ class ItemInfo {
 
   setName(name) {
     this.name = name;
+  }
+
+  use(stage, playerName) {
+    const playerCell = stage.getPlayerCellController().find(playerName);
+    if (playerCell !== null && typeof this.func === 'function') {
+      this.func(stage, playerCell);
+    }
   }
 }
 

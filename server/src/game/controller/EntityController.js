@@ -10,6 +10,13 @@ class EntityController {
     }
   }
 
+  find(element) {
+    if (this.has(element)) {
+      return this.elements[element.getName()];
+    }
+    return null;
+  }
+
   has(element) {
     return element.getName() in this.elements;
   }
