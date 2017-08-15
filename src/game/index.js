@@ -17,7 +17,7 @@ class Game {
     this.stage.setCellController(new CellController());
     this.stage.setItemController(new ItemController());
     this.stage.setPlayerCellController(new PlayerCellController());
-    this.stage.setUpadater((entityName, key, values) => {
+    this.stage.setUpdater((entityName, key, values) => {
       if (this.isConnected) {
         switch (key) {
           case 'vector':

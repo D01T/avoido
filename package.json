@@ -13,10 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/D01T/Avoido.git"
   },
-  "keywords": [
-    "online",
-    "web-game"
-  ],
+  "keywords": ["online", "web-game"],
   "contributors": [
     {
       "name": "Astro36",
@@ -31,6 +28,11 @@
     {
       "name": "Scripter36",
       "email": "1350adwx@naver.com"
+    },
+    {
+      "name": "a1p4ca",
+      "email": "sm@murye.io",
+      "url": "https://murye.io"
     }
   ],
   "license": "MIT",
@@ -40,7 +42,11 @@
   "homepage": "https://github.com/D01T/Avoido#readme",
   "dependencies": {
     "koa": "^2.3.0",
+    "koa-chalk-logger": "^1.0.0",
+    "koa-conditional-get": "^2.0.0",
+    "koa-etag": "^3.0.0",
     "koa-pug": "^3.0.0-2",
+    "koa-static": "^4.0.1",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {

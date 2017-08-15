@@ -9,11 +9,11 @@ class PlayerCellController extends EntityController {
       const playerCellVector = Vector.arrayTo(vectorArray);
       const otherCells = playerCell.getStage().getCellController().getAll();
       playerCell.moveAt(playerCellVector);
-      otherCells.forEach((cell) => {
+      otherCells.some((cell) => {
         if (playerCellVector.eqauls(cell.getVector())) {
           this.remove(name);
           console.log('You Die!');
-          break;
+          return true;
         }
       });
     });
