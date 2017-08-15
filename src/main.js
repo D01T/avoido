@@ -9,7 +9,7 @@ const Game = require('./game');
 
 const root = path.join(__dirname, '../');
 const app = new Koa();
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 4000;
 const pug = new Pug({
   viewPath: path.join(root, 'view/'),
   app,
@@ -24,6 +24,6 @@ app
   .use(async (ctx, next) => {
     ctx.body = pug.render('index');
   })
-  .use(serve(path.join('..', 'public'),))
+  .use(serve(path.join('..', 'public')));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

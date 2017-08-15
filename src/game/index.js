@@ -37,8 +37,10 @@ class Game {
             //   entityName: string
             // }
             this.connection.send('remove', {
-              entityName
+              entityName,
             });
+            break;
+          default:
             break;
         }
       }

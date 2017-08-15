@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/D01T/Avoido.git"
   },
-  "keywords": ["online", "web-game"],
+  "keywords": [
+    "online",
+    "web-game"
+  ],
   "contributors": [
     {
       "name": "Astro36",
@@ -50,7 +53,7 @@
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
-    "eslint": "^4.3.0",
+    "eslint": "^4.4.1",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0"
   }
